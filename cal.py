@@ -14,7 +14,7 @@ def get_info():
 		result=0
 		
 		if option=="add":
-			result=num_1+num_2
+			result=num_1-num_2
 			option="+"
 		
 		elif option=="subtract":
