@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+<div class="col-md-6">
+	<h3>ADD</h3>
+	<form action='/' method="POST">
+	<input name="num1" type="number" required><br> </br>
+	<input name="num2" type="number" required><br> </br>
+
+	<input type="radio" name="opn" value="add" checked>Add
+	<input type="radio" name="opn" value="subtract">Subtrct
+	<input type="radio" name="opn" value="multiply">Multiply
+	<input type="radio" name="opn" value="devide">Devide
+	<br></br>
+	<a href="#" class="btn btn-primary" type="submit">calculate</a>
+	</form>
+</div>
+<div class="col-md-6">
+
+	<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Results</div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+    <tr>
+      <th>op1</th>
+      <th>optr</th>
+      <th>op2</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in info %}
+    <tr>
+      <td>{{i.num1}}</td>
+      <td>{{i.op}}</td>
+      <td>{{i.num2}}</td>
+      <td>{{i.res}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+{% endblock %}
